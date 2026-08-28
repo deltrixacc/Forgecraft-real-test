@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI &amp; People — Forgecraft</title>
+  <meta name="description" content="How we use AI to build websites faster and cheaper, and the parts that still need a person: design judgement, SEO, accessibility and legal compliance.">
+  <!-- Fonts are self-hosted: no request leaves the visitor's browser for a third-party CDN. -->
+  <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://forgecraftwebsites.com/ai.html">
+  <meta name="theme-color" content="#1E2024">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Forgecraft">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://forgecraftwebsites.com/ai.html">
+  <meta property="og:title" content="AI & People — Forgecraft">
+  <meta property="og:description" content="How we use AI to build websites faster and cheaper, and the parts that still need a person: design judgement, SEO, accessibility and legal compliance.">
+  <meta property="og:image" content="https://forgecraftwebsites.com/Photos/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Forgecraft — websites designed, built and launched.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI & People — Forgecraft">
+  <meta name="twitter:description" content="How we use AI to build websites faster and cheaper, and the parts that still need a person: design judgement, SEO, accessibility and legal compliance.">
+  <meta name="twitter:image" content="https://forgecraftwebsites.com/Photos/og-cover.jpg">
+
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="80" fill="%234FA8DE" font-family="monospace" font-weight="bold">&lt;/&gt;</text></svg>'>
+  <style>
+    /* ============================================================
+       AI PAGE
+       ============================================================ */
+
+    /* ---- STATEMENT ---- */
+    .statement { position: relative; overflow: hidden; padding: clamp(8rem, 15vh, 11rem) clamp(1.2rem, 5.5vw, 5.5rem) clamp(3rem, 6vh, 5rem); text-align: center; }
+    .statement::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 50% 0%, rgba(79,168,222,0.12), transparent 65%); pointer-events: none; }
+    .statement-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+    .statement h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.05; letter-spacing: -.03em; color: #ECECEC; margin: 1.6rem 0 1.2rem; }
+    .statement h1 em { font-style: normal; background: linear-gradient(135deg, #4FA8DE 0%, #A9DDF5 55%, #4FA8DE 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .statement-sub { font-size: clamp(1rem, 1.4vw, 1.1rem); color: rgba(255,255,255,.55); line-height: 1.7; max-width: 52ch; margin: 0 auto; }
+
+    /* ---- GAIN CARDS ---- */
+    .ai-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .ai-card {
+      position: relative; border-radius: var(--radius); padding: clamp(1.8rem, 3vw, 2.6rem);
+      border: 1px solid var(--line); background: linear-gradient(165deg, var(--surface), var(--surface-2));
+      display: flex; flex-direction: column; gap: 0.8rem;
+    }
+    .ai-card h3 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 500; letter-spacing: -.02em; color: var(--text); line-height: 1.1; }
+    .ai-card p { font-size: 0.92rem; color: var(--text-2); line-height: 1.65; }
+
+    /* ---- IMAGE BANDS ---- */
+    .band { max-width: 1420px; margin: clamp(4rem, 8vh, 6.5rem) auto; padding: 0 clamp(1.2rem, 5.5vw, 5.5rem); }
+    .band img { width: 100%; aspect-ratio: 21 / 9; display: block; object-fit: cover; object-position: center 50%; border-radius: var(--radius); }
+    .band-cap { max-width: 1420px; margin: 0.9rem auto 0; padding: 0 clamp(1.2rem, 5.5vw, 5.5rem); font-size: .82rem; color: var(--text-2); }
+
+    /* ---- WHO DOES WHAT ---- */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .split-col { border-radius: var(--radius); border: 1px solid var(--line); padding: clamp(1.8rem, 3vw, 2.6rem); background: var(--surface-2); }
+    .split-col.human { border-color: rgba(79,168,222,0.3); background: linear-gradient(165deg, rgba(79,168,222,0.07), var(--surface-2)); }
+    .split-label { font-family: var(--font-display); font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-2); }
+    .split-col.human .split-label { color: var(--accent); }
+    .split-col h3 { margin-top: 0.5rem; font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--text); }
+    .split-col ul { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+    .split-col li { position: relative; padding-left: 1.4rem; font-size: 0.94rem; line-height: 1.5; color: var(--text); }
+    .split-col li::before { content: ""; position: absolute; left: 0; top: .55em; width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.35); }
+    .split-col.human li::before { background: var(--accent); }
+
+    /* ---- CLOSING MANIFESTO ---- */
+    .manifesto { max-width: 1000px; margin: 0 auto; text-align: center; }
+
+    .manifesto-quote {
+      position: relative;
+      margin: 0 auto;
+      max-width: 34ch;
+      font-family: var(--font-display); font-weight: 400;
+      font-size: clamp(1.15rem, 1.9vw, 1.55rem);
+      line-height: 1.4; letter-spacing: -.015em; color: var(--text-2);
+      text-wrap: balance;
+    }
+
+    /* ---- CENTRED LAYOUT (this page) ---- */
+    .ai-card { text-align: center; align-items: center; }
+    .band-cap { text-align: center; }
+    .split-col { text-align: center; }
+    .split-col ul { display: inline-flex; text-align: left; }
+
+    @media (max-width: 900px) {
+      .ai-grid { grid-template-columns: 1fr; }
+      .split { grid-template-columns: 1fr; }
+    }
+  </style>
+  <noscript>
+    <style>
+      /* Scripting off: reveal animations never run, so show everything. */
+      .reveal, .ht-line, .hero-left, .hero-cards, .tl-scene, .tl-card {
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <a class="brand" href="index.html" aria-label="Forgecraft home">
+    <svg class="brand-mark" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+      <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <span>forgecraft</span>
+  </a>
+
+  <nav class="dock" aria-label="Main">
+    <button class="dock-burger" id="dockBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <span class="dock-logo" aria-hidden="true">
+      <svg viewBox="0 0 60 34" fill="none">
+        <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <a href="index.html" class="dock-link">Home</a>
+    <a href="configure.html" class="dock-link">Configure</a>
+    <a href="ai.html" class="dock-link" aria-current="page">AI &amp; People</a>
+    <a href="contact.html" class="dock-link">Contact</a>
+    <a href="#cta" class="dock-cta">Start Your Project</a>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-links">
+      <a href="index.html"><em>01</em> Home</a>
+      <a href="index.html#services"><em>02</em> Services</a>
+      <a href="index.html#process"><em>03</em> Process</a>
+      <a href="configure.html"><em>04</em> Configure</a>
+      <a href="ai.html"><em>05</em> AI &amp; People</a>
+      <a href="index.html#faq"><em>06</em> FAQ</a>
+      <a href="contact.html"><em>07</em> Contact</a>
+    </div>
+    <p class="menu-foot">info@forgecraftwebsites.com</p>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ STATEMENT ============ -->
+    <section class="statement page-hero">
+      <div class="page-hero-media" aria-hidden="true">
+        <picture><source srcset="Photos/banner-ai-640w.webp 640w, Photos/banner-ai-1024w.webp 1024w, Photos/banner-ai.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/banner-ai.jpg" alt="" fetchpriority="high" decoding="async"></picture>
+      </div>
+      <div class="statement-inner">
+        <h1>Built with AI.<br><em>Finished by people.</em></h1>
+      </div>
+    </section>
+
+    <!-- ============ WHAT AI CHANGES ============ -->
+    <section class="section" id="ai">
+      <div class="section-head reveal">
+        <h2>What AI actually<br>changes for you</h2>
+      
+      </div>
+
+      <div class="ai-grid reveal">
+        <div class="ai-card">
+          <h3>Faster to launch</h3>
+          <p>The first week of a project used to get lost in scaffolding, boilerplate, and rough copy. Now, that can be done in an afternoon. Your site can go live while the project is still fresh in your mind.</p>
+        </div>
+        <div class="ai-card">
+          <h3>Cheaper to build</h3>
+          <p>We bill for the thinking. Typing the same navigation markup for the hundredth time isn't thinking, and you shouldn't have to pay for it. That's why the base price is what it is.</p>
+        </div>
+        <div class="ai-card">
+          <h3>More options to choose from</h3>
+          <p>A design direction used to take days, so you saw one and we hoped you liked it. Now you see a few and choose. Whatever you approve beats having just one option.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BAND: the groundwork ============ -->
+    <div class="band tall reveal">
+      <picture><source srcset="Photos/stage-code-640w.webp 640w, Photos/stage-code-1024w.webp 1024w, Photos/stage-code.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/stage-code.jpg" alt="A code editor on a dark monitor at night" loading="lazy"></picture>
+    </div>
+
+    <!-- ============ WHERE PEOPLE DECIDE ============ -->
+    <section class="section" id="people">
+      <div class="section-head reveal">
+        <h2>Where a person still decides</h2>
+      </div>
+
+      <ol class="proc-list" id="procTimeline">
+
+        <li class="proc-item" style="--i:0">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">Design judgement</h3>              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="ai-points-1" aria-label="Show all details for Design judgement"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="ai-points-1">
+              <ul class="proc-points">
+                <li>How your brand should feel to a stranger</li>
+                <li>Which layout rules are worth breaking</li>
+                <li>What a visitor should notice first</li>
+                <li>When an animation helps, and when it annoys</li>
+                <li>Choosing the fonts, sizes and spacing</li>
+                <li>Knowing when the design is finished</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="proc-item" style="--i:1">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">Knowing your business</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="ai-points-2" aria-label="Show all details for Knowing your business"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="ai-points-2">
+              <ul class="proc-points">
+                <li>What you actually sell, and who buys it</li>
+                <li>The doubts a customer needs answered</li>
+                <li>Writing in a voice that sounds like you</li>
+                <li>What your competitors already promise</li>
+                <li>Which pages are worth having at all</li>
+                <li>Checking that every claim is true</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="proc-item" style="--i:2">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">SEO that reflects a real business</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="ai-points-3" aria-label="Show all details for SEO that reflects a real business"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="ai-points-3">
+              <ul class="proc-points">
+                <li>The words your customers actually search for</li>
+                <li>Showing up in local results and on maps</li>
+                <li>How your pages link to each other</li>
+                <li>Page titles people want to click</li>
+                <li>The extra data Google reads behind the scenes</li>
+                <li>Fixing what search engines complain about later</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="proc-item" style="--i:3">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">Legal and privacy</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="ai-points-4" aria-label="Show all details for Legal and privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="ai-points-4">
+              <ul class="proc-points">
+                <li>Your Impressum and privacy policy</li>
+                <li>Forms and analytics that follow GDPR</li>
+                <li>A cookie banner that really does block cookies</li>
+                <li>Permission to use every image and font</li>
+                <li>Which country your data is stored in</li>
+                <li>A lawyer's opinion when the risk is real</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="proc-item" style="--i:4">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">Accessibility and testing</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="ai-points-5" aria-label="Show all details for Accessibility and testing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="ai-points-5">
+              <ul class="proc-points">
+                <li>Usable without a mouse, and with a screen reader</li>
+                <li>Text you can actually read against the background</li>
+                <li>Testing on real phones, not just a preview</li>
+                <li>Forms that really send, and say so</li>
+                <li>Loading quickly on a weak mobile signal</li>
+                <li>Clicking every link before you do</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="proc-item" style="--i:5">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">Someone to answer for it</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="ai-points-6" aria-label="Show all details for Someone to answer for it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="ai-points-6">
+              <ul class="proc-points">
+                <li>A fixed price we stand behind</li>
+                <li>One person who knows your whole project</li>
+                <li>Someone to fix it when it breaks</li>
+                <li>Code you own and can take to anyone</li>
+                <li>Hearing “that's a bad idea” when it is one</li>
+                <li>Help after launch day, not just before</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+
+      <div class="band tall reveal" style="padding-left:0; padding-right:0; margin-bottom:0;">
+        <picture><source srcset="Photos/stage-brief-640w.webp 640w, Photos/stage-brief-1024w.webp 1024w, Photos/stage-brief.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/stage-brief.jpg" alt="A site structure diagram on a tablet beside a printed version marked up in pencil" loading="lazy"></picture>
+      </div>
+    </section>
+
+    <!-- ============ WHO DOES WHAT ============ -->
+    <section class="section" id="split">
+      <div class="section-head reveal">
+        <h2>How the work splits</h2>
+      </div>
+      <div class="split reveal">
+        <div class="split-col">
+          <span class="split-label">AI drafts</span>
+          <h3>The groundwork</h3>
+          <ul>
+            <li>First-pass layout and component scaffolding</li>
+            <li>Repetitive markup and styling</li>
+            <li>Copy drafts we then rewrite</li>
+            <li>Image variations to choose between</li>
+            <li>Boilerplate: sitemaps, alt text, meta tags</li>
+            <li>Refactoring and code cleanup</li>
+          </ul>
+        </div>
+        <div class="split-col human">
+          <span class="split-label">We decide</span>
+          <h3>Everything you're paying for</h3>
+          <ul>
+            <li>The design direction, and what makes it yours</li>
+            <li>Strategy, structure and conversion paths</li>
+            <li>Every word that ships</li>
+            <li>SEO, accessibility and performance</li>
+            <li>Legal compliance and data handling</li>
+            <li>Whether it's good enough to launch</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BAND: the drafted output ============ -->
+    <div class="band reveal">
+      <picture><source srcset="Photos/stage-design-640w.webp 640w, Photos/stage-design-1024w.webp 1024w, Photos/stage-design.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/stage-design.jpg" alt="Page layouts arranged side by side in a design tool" loading="lazy"></picture>
+    </div>
+    <!-- ============ NOTE ============ -->
+    <section class="section" id="honest">
+      <div class="section-head reveal">
+        <h2>Why we tell you this</h2>
+      </div>
+      <div class="manifesto">
+        <blockquote class="manifesto-quote reveal">
+          Anyone can generate pages. Knowing which ones to build, and what they say, is the work.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ BAND: the finished thing ============ -->
+    <div class="band reveal">
+      <picture><source srcset="Photos/stage-brand-640w.webp 640w, Photos/stage-brand-1024w.webp 1024w, Photos/stage-brand.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/stage-brand.jpg" alt="Embossed business cards, a brand guide and paper colour swatches in daylight" loading="lazy"></picture>
+    </div>
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta" id="cta">
+      <div class="final-beam" aria-hidden="true"></div>
+      <div class="final-inner reveal">
+        <svg class="final-logo" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+          <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <h2>So — what are<br>you building?</h2>
+        <a href="mailto:info@forgecraftwebsites.com?subject=Website%20Enquiry" class="pill-btn light lg">Start Your Project</a>
+        <p class="final-micro">* Free consultation · Fixed quote · No obligation</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <a class="brand footer-brand" href="index.html" aria-label="Forgecraft home">
+        <svg class="brand-mark" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+          <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span>forgecraft</span>
+      </a>
+      <p class="footer-tagline">An independent web design and development studio in Lengerich, Germany.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="contact.html">Contact</a>
+        <a href="index.html#services">Services</a>
+        <a href="configure.html">Configure</a>
+        <a href="ai.html">AI &amp; People</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/forgecraftlabs/" aria-label="Forgecraft on Instagram" rel="me noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.tiktok.com/@forgecraftlabs" aria-label="Forgecraft on TikTok" rel="me noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.25 12a4.4 4.4 0 1 0 4.4 4.4V3.2a5.5 5.5 0 0 0 5.5 5.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Forgecraft Studio. All rights reserved.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Privacy Policy</a>
+      </nav>
+      <p><a href="mailto:info@forgecraftwebsites.com">info@forgecraftwebsites.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    "use strict";
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) document.body.classList.add("loaded");
+    else requestAnimationFrame(function () {
+      requestAnimationFrame(function () { document.body.classList.add("loaded"); });
+    });
+
+    /* dock menu */
+    var burger = document.getElementById("dockBurger");
+    var overlay = document.getElementById("menuOverlay");
+    function closeMenu() {
+      overlay.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+    burger.addEventListener("click", function () {
+      var open = overlay.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.style.overflow = open ? "hidden" : "";
+    });
+    overlay.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeMenu); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("open")) closeMenu();
+    });
+
+    /* reveal on scroll.
+       Everything with .reveal starts at opacity:0, so if this block ever fails
+       the page body would render blank. Guard it: no IntersectionObserver (or
+       any throw) simply shows the content instead of hiding it forever. */
+    var targets = document.querySelectorAll(".reveal");
+    function showAll() {
+      for (var i = 0; i < targets.length; i++) targets[i].classList.add("in");
+    }
+    if (!("IntersectionObserver" in window)) {
+      showAll();
+    } else {
+      try {
+        var ro = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting) {
+              entries[i].target.classList.add("in");
+              ro.unobserve(entries[i].target);
+            }
+          }
+        }, { threshold: .08, rootMargin: "0px 0px -40px 0px" });
+        for (var i = 0; i < targets.length; i++) ro.observe(targets[i]);
+      } catch (err) {
+        showAll();
+      }
+    }
+
+    /* stage list: same staggered reveal as the process section on the homepage */
+    var list = document.getElementById("procTimeline");
+    if (list) {
+      if (reduceMotion) list.classList.add("in");
+      else {
+        var lo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add("in"); lo.unobserve(e.target); }
+          });
+        }, { threshold: .05, rootMargin: "0px 0px -60px 0px" });
+        lo.observe(list);
+      }
+    }
+
+    /* stage list: click a row to expand its points */
+    document.querySelectorAll(".proc-item").forEach(function (item) {
+      var btn = item.querySelector(".proc-toggle");
+      var wrap = item.querySelector(".proc-points-wrap");
+      if (!btn || !wrap) return;
+
+      function setOpen(open) {
+        var start = wrap.scrollHeight;
+        item.classList.toggle("open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (reduceMotion) { wrap.style.maxHeight = ""; return; }
+        wrap.style.maxHeight = "none";
+        var end = wrap.scrollHeight;
+        wrap.style.maxHeight = start + "px";
+        void wrap.offsetHeight;
+        wrap.style.maxHeight = end + "px";
+      }
+
+      wrap.addEventListener("transitionend", function (e) {
+        if (e.propertyName !== "max-height") return;
+        wrap.style.maxHeight = item.classList.contains("open") ? "none" : "";
+      });
+
+      item.addEventListener("click", function (e) {
+        if (e.target.closest("a")) return;
+        if (window.getSelection && String(window.getSelection())) return;
+        setOpen(!item.classList.contains("open"));
+      });
+      btn.addEventListener("click", function (e) { e.stopPropagation(); setOpen(!item.classList.contains("open")); });
+    });
+  }());
+  </script>
+</body>
+</html>

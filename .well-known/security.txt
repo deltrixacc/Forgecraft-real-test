@@ -1,0 +1,10 @@
+# How to report a security problem with this website.
+# https://securitytxt.org/  (RFC 9116)
+
+Contact: mailto:info@forgecraftwebsites.com
+Preferred-Languages: en, de
+Canonical: https://forgecraftwebsites.com/.well-known/security.txt
+
+# TODO before launch: set this to roughly a year out and diarise renewing it.
+# An expired security.txt is treated as invalid.
+Expires: 2027-08-28T00:00:00.000Z

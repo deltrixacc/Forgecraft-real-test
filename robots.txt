@@ -1,0 +1,9 @@
+# https://forgecraftwebsites.com
+User-agent: *
+Allow: /
+
+# Nothing here is private, but these serve no purpose in an index.
+Disallow: /volta/
+Disallow: /Photos/preview/
+
+Sitemap: https://forgecraftwebsites.com/sitemap.xml

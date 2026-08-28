@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configure Your Website — Forgecraft</title>
+  <meta name="description" content="Price your website before you get in touch: choose how many pages you need and which features, and watch the figure update as you go. From €500.">
+  <!-- Fonts are self-hosted: no request leaves the visitor's browser for a third-party CDN. -->
+  <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://forgecraftwebsites.com/configure.html">
+  <meta name="theme-color" content="#1E2024">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Forgecraft">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://forgecraftwebsites.com/configure.html">
+  <meta property="og:title" content="Configure Your Website — Forgecraft">
+  <meta property="og:description" content="Price your website before you get in touch: choose how many pages you need and which features, and watch the figure update as you go. From €500.">
+  <meta property="og:image" content="https://forgecraftwebsites.com/Photos/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Forgecraft — websites designed, built and launched.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Configure Your Website — Forgecraft">
+  <meta name="twitter:description" content="Price your website before you get in touch: choose how many pages you need and which features, and watch the figure update as you go. From €500.">
+  <meta name="twitter:image" content="https://forgecraftwebsites.com/Photos/og-cover.jpg">
+
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="80" fill="%234FA8DE" font-family="monospace" font-weight="bold">&lt;/&gt;</text></svg>'>
+  <style>
+    /* ============================================================
+       CONFIGURE PAGE
+       ============================================================ */
+
+    /* ---- STATEMENT ---- */
+    .statement { position: relative; overflow: hidden; padding: clamp(8rem, 15vh, 11rem) clamp(1.2rem, 5.5vw, 5.5rem) clamp(3rem, 6vh, 5rem); text-align: center; }
+    .statement::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 50% 0%, rgba(79,168,222,0.12), transparent 65%); pointer-events: none; }
+    .statement-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+    .statement h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.05; letter-spacing: -.03em; color: #ECECEC; margin: 1.6rem 0 1.2rem; }
+    .statement h1 em { font-style: normal; background: linear-gradient(135deg, #4FA8DE 0%, #A9DDF5 55%, #4FA8DE 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .statement-sub { font-size: clamp(1rem, 1.4vw, 1.1rem); color: rgba(255,255,255,.55); line-height: 1.7; max-width: 46ch; margin: 0 auto 2.2rem; }
+
+  </style>
+  <noscript>
+    <style>
+      /* Scripting off: reveal animations never run, so show everything. */
+      .reveal, .ht-line, .hero-left, .hero-cards, .tl-scene, .tl-card {
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <a class="brand" href="index.html" aria-label="Forgecraft home">
+    <svg class="brand-mark" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+      <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <span>forgecraft</span>
+  </a>
+
+  <nav class="dock" aria-label="Main">
+    <button class="dock-burger" id="dockBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <span class="dock-logo" aria-hidden="true">
+      <svg viewBox="0 0 60 34" fill="none">
+        <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <a href="index.html" class="dock-link">Home</a>
+    <a href="configure.html" class="dock-link" aria-current="page">Configure</a>
+    <a href="ai.html" class="dock-link">AI &amp; People</a>
+    <a href="contact.html" class="dock-link">Contact</a>
+    <a href="#cta" class="dock-cta">Start Your Project</a>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-links">
+      <a href="index.html"><em>01</em> Home</a>
+      <a href="index.html#services"><em>02</em> Services</a>
+      <a href="index.html#process"><em>03</em> Process</a>
+      <a href="#configurator"><em>04</em> Configure</a>
+      <a href="ai.html"><em>05</em> AI &amp; People</a>
+      <a href="index.html#faq"><em>06</em> FAQ</a>
+      <a href="contact.html"><em>07</em> Contact</a>
+    </div>
+    <p class="menu-foot">info@forgecraftwebsites.com</p>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ STATEMENT ============ -->
+    <section class="statement page-hero">
+      <div class="page-hero-media focus-right" aria-hidden="true">
+        <picture><source srcset="Photos/banner-configure-640w.webp 640w, Photos/banner-configure-1024w.webp 1024w, Photos/banner-configure.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/banner-configure.jpg" alt="" fetchpriority="high" decoding="async"></picture>
+      </div>
+      <div class="statement-inner">
+        <h1>Transparent pricing.<br><em>No surprises.</em></h1>
+      </div>
+    </section>
+
+    <!-- ============ PRICE CALCULATOR ============ -->
+    <section class="configurator" id="configurator">
+      <div class="calc-inner">
+        <div class="calc-head reveal">
+          <h2>What your website costs</h2>
+        </div>
+
+        <div class="calc-grid reveal">
+          <!-- Base card -->
+          <div class="calc-base">
+            <p class="calc-base-title">Base</p>
+            <p class="calc-base-sub">The foundation of every website</p>
+            <div class="calc-base-div"></div>
+            <ul class="calc-base-list">
+              <li><b>Custom Design</b><span>Tailored to your brand and audience</span></li>
+              <li><b>Optimized for Every Device</b><span>Smartphone, tablet, and desktop</span></li>
+              <li><b>Animations &amp; Interactions</b><span>Bringing your website to life</span></li>
+              <li><b>Home Page</b><span>Your brand at first glance</span></li>
+              <li><b>Legal Pages</b><span>Legal notice and privacy policy</span></li>
+            </ul>
+          </div>
+
+          <!-- Options -->
+          <div class="calc-options">
+            <div class="calc-pages">
+              <div class="calc-pages-top">
+                <div>
+                  <p class="calc-pages-title">Number of Pages</p>
+                  <p class="calc-pages-desc">How many pages should your website have?</p>
+                </div>
+                <span class="calc-pages-num" id="calcPageNum">1</span>
+              </div>
+              <input type="range" class="calc-slider" id="calcSlider" min="1" max="20" value="1" aria-label="Number of pages">
+            </div>
+
+            <div class="calc-addon" data-price="90">
+              <div class="calc-addon-info">
+                <b>Contact Form</b>
+                <span>So potential clients can reach you directly</span>
+              </div>
+              <div class="calc-addon-right">
+                <span class="calc-addon-from">from €90</span>
+                <button class="calc-toggle-btn" type="button" aria-pressed="false">+</button>
+              </div>
+            </div>
+
+            <div class="calc-addon" data-price="290">
+              <div class="calc-addon-info">
+                <b>Content Management</b>
+                <span>Update content yourself, no technical knowledge needed</span>
+              </div>
+              <div class="calc-addon-right">
+                <span class="calc-addon-from">from €290</span>
+                <button class="calc-toggle-btn" type="button" aria-pressed="false">+</button>
+              </div>
+            </div>
+
+            <div class="calc-addon" data-price="190">
+              <div class="calc-addon-info">
+                <b>Multiple Languages</b>
+                <span>So every visitor can understand your website</span>
+              </div>
+              <div class="calc-addon-right">
+                <span class="calc-addon-from">from €190</span>
+                <button class="calc-toggle-btn" type="button" aria-pressed="false">+</button>
+              </div>
+            </div>
+
+            <div class="calc-addon" data-price="490">
+              <div class="calc-addon-info">
+                <b>Logo &amp; Branding</b>
+                <span>No logo yet? We'll create one that fits your brand.</span>
+              </div>
+              <div class="calc-addon-right">
+                <span class="calc-addon-from">from €490</span>
+                <button class="calc-toggle-btn" type="button" aria-pressed="false">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-footer">
+          <p class="calc-price" id="calcPrice">from €500</p>
+          <a href="#cta" class="calc-cta-link">Get in touch</a>
+          <p class="calc-disclaimer">All figures are non-binding. We'll put together a tailored quote after an initial call.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CALCULATOR PHOTO ============ -->
+    <div class="cfg-photo-wrap">
+      <picture><source srcset="Photos/desk-daylight-plans-640w.webp 640w, Photos/desk-daylight-plans-1024w.webp 1024w, Photos/desk-daylight-plans.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/desk-daylight-plans.jpg" alt="Printed page layouts, a pencil and colour swatches on a desk in daylight" loading="lazy" class="cfg-photo"></picture>
+    </div>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta" id="cta">
+      <div class="final-beam" aria-hidden="true"></div>
+      <div class="final-inner reveal">
+        <svg class="final-logo" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+          <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <h2>Ready to build<br>something great?</h2>
+        <a href="mailto:info@forgecraftwebsites.com?subject=Website%20Quote%20Request" class="pill-btn light lg">Start Your Project</a>
+        <p class="final-micro">* Free consultation · Fixed quote · No obligation</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <a class="brand footer-brand" href="index.html" aria-label="Forgecraft home">
+        <svg class="brand-mark" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+          <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span>forgecraft</span>
+      </a>
+      <p class="footer-tagline">An independent web design and development studio in Lengerich, Germany.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="contact.html">Contact</a>
+        <a href="index.html#services">Services</a>
+        <a href="#configurator">Configure</a>
+        <a href="ai.html">AI &amp; People</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/forgecraftlabs/" aria-label="Forgecraft on Instagram" rel="me noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.tiktok.com/@forgecraftlabs" aria-label="Forgecraft on TikTok" rel="me noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.25 12a4.4 4.4 0 1 0 4.4 4.4V3.2a5.5 5.5 0 0 0 5.5 5.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Forgecraft Studio. All rights reserved.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Privacy Policy</a>
+      </nav>
+      <p>Crafted with precision.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    "use strict";
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) document.body.classList.add("loaded");
+    else requestAnimationFrame(function () {
+      requestAnimationFrame(function () { document.body.classList.add("loaded"); });
+    });
+
+    /* dock menu */
+    var burger = document.getElementById("dockBurger");
+    var overlay = document.getElementById("menuOverlay");
+    function closeMenu() {
+      overlay.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+    burger.addEventListener("click", function () {
+      var open = overlay.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.style.overflow = open ? "hidden" : "";
+    });
+    overlay.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeMenu); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("open")) closeMenu();
+    });
+
+    /* reveal on scroll.
+       Everything with .reveal starts at opacity:0, so if this block ever fails
+       the page body would render blank. Guard it: no IntersectionObserver (or
+       any throw) simply shows the content instead of hiding it forever. */
+    var targets = document.querySelectorAll(".reveal");
+    function showAll() {
+      for (var i = 0; i < targets.length; i++) targets[i].classList.add("in");
+    }
+    if (!("IntersectionObserver" in window)) {
+      showAll();
+    } else {
+      try {
+        var ro = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting) {
+              entries[i].target.classList.add("in");
+              ro.unobserve(entries[i].target);
+            }
+          }
+        }, { threshold: .08, rootMargin: "0px 0px -40px 0px" });
+        for (var i = 0; i < targets.length; i++) ro.observe(targets[i]);
+      } catch (err) {
+        showAll();
+      }
+    }
+
+    /* price calculator */
+    var BASE = 500, PER_PAGE = 80;
+    var slider = document.getElementById("calcSlider");
+    var pageNum = document.getElementById("calcPageNum");
+    var priceEl = document.getElementById("calcPrice");
+    if (!slider || !priceEl) return;
+
+    function fill() {
+      var min = +slider.min || 1, max = +slider.max || 20, val = +slider.value || 1;
+      var pct = ((val - min) / (max - min) * 100).toFixed(1);
+      slider.style.background = "linear-gradient(to right,#fff " + pct + "%,rgba(255,255,255,0.18) " + pct + "%)";
+    }
+
+    function update() {
+      var pages = +slider.value;
+      var total = BASE + (pages - 1) * PER_PAGE;
+      document.querySelectorAll(".calc-addon.selected").forEach(function (a) {
+        total += +a.dataset.price || 0;
+      });
+      priceEl.textContent = "from €" + total.toLocaleString("en-US");
+      priceEl.classList.remove("pulse"); void priceEl.offsetWidth; priceEl.classList.add("pulse");
+    }
+
+    slider.addEventListener("input", function () {
+      if (pageNum) pageNum.textContent = slider.value;
+      fill(); update();
+    });
+
+    document.querySelectorAll(".calc-addon").forEach(function (addon) {
+      var btn = addon.querySelector(".calc-toggle-btn");
+      addon.addEventListener("click", function () {
+        var sel = addon.classList.toggle("selected");
+        if (btn) {
+          btn.textContent = sel ? "—" : "+";
+          btn.setAttribute("aria-pressed", sel ? "true" : "false");
+        }
+        update();
+      });
+    });
+
+    fill(); update();
+  }());
+  </script>
+</body>
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgecraft — Web Design &amp; Development in Lengerich</title>
+  <meta name="description" content="Forgecraft is a web design and development studio in Lengerich, building fast, well-made websites for small businesses — clear pricing, fixed quotes.">
+  <!-- Fonts are self-hosted: no request leaves the visitor's browser for a third-party CDN. -->
+  <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- LCP preload. The hero background is chosen by aspect ratio in CSS;
+       these mirror those breakpoints so the winning image starts
+       downloading before the stylesheet is parsed. -->
+  <link rel="preload" as="image" type="image/webp" href="Photos/hero-showcase-portrait.webp" media="(max-aspect-ratio: 11/10)">
+  <link rel="preload" as="image" type="image/webp" href="Photos/hero-showcase.webp" media="(min-aspect-ratio: 2/1)">
+  <link rel="preload" as="image" type="image/webp" href="Photos/hero-showcase-desktop.webp" media="(min-aspect-ratio: 11/10) and (max-aspect-ratio: 2/1)">
+  <link rel="canonical" href="https://forgecraftwebsites.com/">
+  <meta name="theme-color" content="#1E2024">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Forgecraft">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://forgecraftwebsites.com/">
+  <meta property="og:title" content="Forgecraft — Web Design &amp; Development in Lengerich">
+  <meta property="og:description" content="Forgecraft is a web design and development studio in Lengerich, building fast, well-made websites for small businesses — clear pricing, fixed quotes.">
+  <meta property="og:image" content="https://forgecraftwebsites.com/Photos/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Forgecraft — websites designed, built and launched.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Forgecraft — Web Design &amp; Development in Lengerich">
+  <meta name="twitter:description" content="Forgecraft is a web design and development studio in Lengerich, building fast, well-made websites for small businesses — clear pricing, fixed quotes.">
+  <meta name="twitter:image" content="https://forgecraftwebsites.com/Photos/og-cover.jpg">
+
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <!-- FAQ rich result. Generated from the visible <details> blocks below;
+       if you edit a question or answer, update this too or Google will
+       treat the mismatch as a violation. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://forgecraftwebsites.com/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a website take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most projects launch within 2–4 weeks. Larger builds with custom functionality typically take 6–8 weeks. You'll get a clear timeline before we start."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a website cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our packages start at €500. The right price depends on scope, so we always start with a free consultation and a fixed quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to provide content and images?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We can write your copy, source premium imagery and structure your content for conversions. If you have material, great — we'll refine it together."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my website work on phones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely — most of your visitors are on mobile, so every site we build is designed mobile-first and tested on real devices before launch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every project includes post-launch support. Beyond that, we offer care plans for updates, security, backups and continuous improvement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you improve my existing website instead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We'll audit your current site for free and recommend whether a redesign or a rebuild will deliver more value for your budget."
+      }
+    }
+  ]
+}
+  </script>
+  <!-- Structured data: business identity, offer and social profiles. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://forgecraftwebsites.com/#business",
+      "name": "Forgecraft",
+      "alternateName": "Forgecraft Studio",
+      "url": "https://forgecraftwebsites.com/",
+      "email": "info@forgecraftwebsites.com",
+      "description": "Forgecraft is a web design and development studio in Lengerich, building fast, well-made websites for small businesses — clear pricing, fixed quotes.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://forgecraftwebsites.com/icons/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://forgecraftwebsites.com/Photos/og-cover.jpg",
+      "priceRange": "€€",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lengerich"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Kreis Steinfurt"
+        },
+        {
+          "@type": "Country",
+          "name": "Germany"
+        }
+      ],
+      "knowsLanguage": [
+        "en",
+        "de"
+      ],
+      "serviceType": [
+        "Web design",
+        "Web development",
+        "SEO",
+        "Branding"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website packages",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom website",
+              "description": "Custom design, responsive across every device, animations, home page and legal pages."
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 500,
+              "priceCurrency": "EUR",
+              "description": "Base configuration; add-ons priced separately."
+            }
+          }
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Münsterstraße 51",
+        "postalCode": "49525",
+        "addressLocality": "Lengerich",
+        "addressRegion": "Nordrhein-Westfalen",
+        "addressCountry": "DE"
+      },
+      "telephone": "+4917661642188",
+      "sameAs": [
+        "https://www.instagram.com/forgecraftlabs/",
+        "https://www.tiktok.com/@forgecraftlabs"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://forgecraftwebsites.com/#website",
+      "url": "https://forgecraftwebsites.com/",
+      "name": "Forgecraft",
+      "publisher": {
+        "@id": "https://forgecraftwebsites.com/#business"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
+  </script>
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="80" fill="%234FA8DE" font-family="monospace" font-weight="bold">&lt;/&gt;</text></svg>'>
+  <noscript>
+    <style>
+      /* Scripting off: reveal animations never run, so show everything. */
+      .reveal, .ht-line, .hero-left, .hero-cards, .tl-scene, .tl-card {
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#top">Skip to content</a>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- fixed logo, top right -->
+  <a class="brand" href="#top" aria-label="Forgecraft home">
+    <svg class="brand-mark" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+      <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <span>forgecraft</span>
+  </a>
+
+  <!-- floating dock -->
+  <nav class="dock" aria-label="Main">
+    <button class="dock-burger" id="dockBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <span class="dock-logo" aria-hidden="true">
+      <svg viewBox="0 0 60 34" fill="none">
+        <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <a href="index.html" class="dock-link" aria-current="page">Home</a>
+    <a href="configure.html" class="dock-link">Configure</a>
+    <a href="ai.html" class="dock-link">AI &amp; People</a>
+    <a href="contact.html" class="dock-link">Contact</a>
+    <a href="#cta" class="dock-cta">Start Your Project</a>
+  </nav>
+
+  <!-- full-screen menu -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-links">
+      <a href="#configurator"><em>01</em> Configure</a>
+      <a href="#services"><em>02</em> Services</a>
+      <a href="#process"><em>03</em> Process</a>
+      <a href="ai.html"><em>04</em> AI &amp; People</a>
+      <a href="#faq"><em>05</em> FAQ</a>
+      <a href="contact.html"><em>06</em> Contact</a>
+    </div>
+    <p class="menu-foot">info@forgecraftwebsites.com</p>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-beam" aria-hidden="true"></div>
+      <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
+
+      <!-- clickable monitor screen -> opens live site preview -->
+      <div class="screen-hotspot" id="screenHotspot" role="button" tabindex="0"
+           aria-label="Open the live Autohaus Pufahl website preview"></div>
+      <span class="screen-hotspot-hint" id="screenHotspotHint" role="button" tabindex="0"
+            aria-label="Open the live Autohaus Pufahl website preview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/><path d="M14 4h6v6M20 4l-9 9"/></svg>
+        View live site
+      </span>
+
+      <div class="hero-stage" id="heroStage">
+      <h1 class="hero-title">
+        <span class="ht-line">Websites That</span>
+        <span class="ht-line">Truly
+          <svg class="spark" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 2 L28.5 19.5 L46 24 L28.5 28.5 L24 46 L19.5 28.5 L2 24 L19.5 19.5 Z" fill="#4FA8DE"/>
+          </svg>
+          Convert</span>
+      </h1>
+
+      </div><!-- /.hero-stage -->
+    </section>
+
+    <!-- ============ PRICE CALCULATOR ============ -->
+    <section class="configurator" id="configurator">
+      <div class="calc-inner">
+        <div class="calc-head reveal">
+          <h2>What your website costs</h2>
+        </div>
+
+        <div class="calc-grid reveal">
+          <!-- Base card -->
+          <div class="calc-base">
+            <p class="calc-base-title">Base</p>
+            <p class="calc-base-sub">The foundation of every website</p>
+            <div class="calc-base-div"></div>
+            <ul class="calc-base-list">
+              <li><b>Custom Design</b><span>Tailored to your brand and audience</span></li>
+              <li><b>Optimized for Every Device</b><span>Smartphone, tablet, and desktop</span></li>
+              <li><b>Animations &amp; Interactions</b><span>Bringing your website to life</span></li>
+              <li><b>Home Page</b><span>Your brand at first glance</span></li>
+              <li><b>Legal Pages</b><span>Legal notice and privacy policy</span></li>
+            </ul>
+          </div>
+
+          <!-- Options -->
+          <div class="calc-options">
+            <div class="calc-pages">
+              <div class="calc-pages-top">
+                <div>
+                  <p class="calc-pages-title">Number of Pages</p>
+                  <p class="calc-pages-desc">How many pages should your website have?</p>
+                </div>
+                <span class="calc-pages-num" id="calcPageNum">1</span>
+              </div>
+              <input type="range" class="calc-slider" id="calcSlider" min="1" max="20" value="1" aria-label="Number of pages">
+            </div>
+
+            <div class="calc-addon" data-price="90">
+              <div class="calc-addon-info">
+                <b>Contact Form</b>
+                <span>So potential clients can reach you directly</span>
+              </div>
+              <div class="calc-addon-right">
+                <span class="calc-addon-from">from €90</span>
+                <button class="calc-toggle-btn" type="button" aria-pressed="false">+</button>
+              </div>
+            </div>
+
+            <div class="calc-addon" data-price="290">
+              <div class="calc-addon-info">
+                <b>Content Management</b>
+                <span>Update content yourself, no technical knowledge needed</span>
+              </div>
+              <div class="calc-addon-right">
+                <span class="calc-addon-from">from €290</span>
+                <button class="calc-toggle-btn" type="button" aria-pressed="false">+</button>
+              </div>
+            </div>
+
+            <div class="calc-addon" data-price="190">
+              <div class="calc-addon-info">
+                <b>Multiple Languages</b>
+                <span>So every visitor can understand your website</span>
+              </div>
+              <div class="calc-addon-right">
+                <span class="calc-addon-from">from €190</span>
+                <button class="calc-toggle-btn" type="button" aria-pressed="false">+</button>
+              </div>
+            </div>
+
+            <div class="calc-addon" data-price="490">
+              <div class="calc-addon-info">
+                <b>Logo &amp; Branding</b>
+                <span>No logo yet? We'll create one that fits your brand.</span>
+              </div>
+              <div class="calc-addon-right">
+                <span class="calc-addon-from">from €490</span>
+                <button class="calc-toggle-btn" type="button" aria-pressed="false">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-footer">
+          <p class="calc-price" id="calcPrice">from €500</p>
+          <a href="#cta" class="calc-cta-link">Get in touch</a>
+          <p class="calc-disclaimer">All figures are non-binding. We'll put together a tailored quote after an initial call.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONFIGURATOR PHOTO ============ -->
+    <div class="cfg-photo-wrap">
+      <picture><source srcset="Photos/desk-wireframes-640w.webp 640w, Photos/desk-wireframes-1024w.webp 1024w, Photos/desk-wireframes.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/desk-wireframes.jpg" alt="Wireframe sketches and a drawing tablet on a desk at night" loading="lazy" class="cfg-photo"></picture>
+    </div>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services section" id="services">
+      <div class="srv-head reveal">
+        <h2>Everything your business<br>needs to win online</h2>
+        <p class="srv-sub">Web design, web development and SEO, handled end to end by one
+        small studio &mdash; from the first conversation to the weeks after launch.</p>
+      </div>
+      <div class="tl-scene">
+        <div class="tl-world">
+          <div class="tl-grid">
+            <article class="tl-item" style="--row:1;--col:1">
+              <div class="tl-card" data-i="0">
+                <span class="tl-n">01</span>
+                <h3>Strategy</h3>
+                <p>Before anyone opens a design tool, we work out what this site actually has to achieve.</p>
+                <div class="tl-more"><div><p class="tl-more-text">Every project starts with a proper conversation about your business and your customers. From there, we build the site structure and content brief, so nothing gets designed later based on a guess.</p></div></div>
+                <button class="tl-toggle" aria-label="Expand" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+              <span class="tl-stem"></span>
+            </article>
+            <article class="tl-item tl-below" style="--row:3;--col:2">
+              <span class="tl-stem"></span>
+              <div class="tl-card" data-i="1">
+                <span class="tl-n">02</span>
+                <h3>Design</h3>
+                <p>How it looks, how it feels, and where a visitor looks first.</p>
+                <div class="tl-more"><div><p class="tl-more-text">Colour, type, spacing, motion — all of it gets the same attention, because that's what makes a site feel expensive rather than cheap. We iterate until it's right, then hand off exact specs.</p></div></div>
+                <button class="tl-toggle" aria-label="Expand" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+            </article>
+            <article class="tl-item" style="--row:1;--col:3">
+              <div class="tl-card" data-i="2">
+                <span class="tl-n">03</span>
+                <h3>Development</h3>
+                <p>Clean code that still behaves on someone's old phone three years from now.</p>
+                <div class="tl-more"><div><p class="tl-more-text">We build with clean, maintainable code. No bloated page builders. Sites load fast, pass Core Web Vitals and behave on every device we can get our hands on.</p></div></div>
+                <button class="tl-toggle" aria-label="Expand" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+              <span class="tl-stem"></span>
+            </article>
+            <article class="tl-item tl-below" style="--row:3;--col:4">
+              <span class="tl-stem"></span>
+              <div class="tl-card" data-i="3">
+                <span class="tl-n">04</span>
+                <h3>Optimise</h3>
+                <p>We sort out SEO and page speed before launch, not once the traffic disappoints.</p>
+                <div class="tl-more"><div><p class="tl-more-text">Before launch we run a full SEO audit, fix what it finds, compress the assets and wire up analytics. You go live with green Lighthouse scores and pages Google can actually make sense of.</p></div></div>
+                <button class="tl-toggle" aria-label="Expand" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+            </article>
+            <article class="tl-item" style="--row:1;--col:5">
+              <div class="tl-card" data-i="4">
+                <span class="tl-n">05</span>
+                <h3>Growth</h3>
+                <p>Once it's live we watch what people actually do, and keep improving it.</p>
+                <div class="tl-more"><div><p class="tl-more-text">A site isn't finished on launch day. We connect forms, booking tools, CRMs and email flows, then watch the numbers and keep tuning. The first few months after launch are usually where the real gains are.</p></div></div>
+                <button class="tl-toggle" aria-label="Expand" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              </div>
+              <span class="tl-stem"></span>
+            </article>
+            <div class="tl-rail" aria-hidden="true">
+              <div class="tl-line-track"></div>
+              <div class="tl-dots">
+                <span class="tl-dot" style="--d:0"></span>
+                <span class="tl-dot" style="--d:1"></span>
+                <span class="tl-dot" style="--d:2"></span>
+                <span class="tl-dot" style="--d:3"></span>
+                <span class="tl-dot" style="--d:4"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="process section" id="process">
+      <div class="process-photo top reveal">
+        <picture><source srcset="Photos/meeting-first-call-640w.webp 640w, Photos/meeting-first-call-1024w.webp 1024w, Photos/meeting-first-call.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/meeting-first-call.jpg" alt="Two people reviewing a website design together at a meeting table" loading="lazy"></picture>
+      </div>
+      <div class="section-head reveal">
+        <h2>From first call to launch day</h2>
+      </div>
+
+      <ol class="proc-list" id="procTimeline">
+
+        <li class="proc-item" style="--i:0">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">Gather Information</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="proc-points-01" aria-label="Show all details for Gather Information"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="proc-points-01">
+              <ul class="proc-points">
+              <li>Goals and requirements</li>
+              <li>Pages, structure and content</li>
+              <li>Images, logo and assets</li>
+              <li>Colors and design language</li>
+              <li>References you like</li>
+              <li>Features and functionality</li>
+            </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="proc-item" style="--i:1">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">First Website Concept</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="proc-points-02" aria-label="Show all details for First Website Concept"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="proc-points-02">
+              <ul class="proc-points">
+              <li>Page structure</li>
+              <li>Layout and visual hierarchy</li>
+              <li>Typography</li>
+              <li>Colors and branding</li>
+              <li>User experience</li>
+              <li>Overall look and feel</li>
+            </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="proc-item" style="--i:2">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">Feedback &amp; Revisions</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="proc-points-03" aria-label="Show all details for Feedback and Revisions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="proc-points-03">
+              <ul class="proc-points">
+              <li>Layout adjustments</li>
+              <li>Content changes</li>
+              <li>Colors and typography</li>
+              <li>Images and graphics</li>
+              <li>Sections and functionality</li>
+              <li>Details and improvements</li>
+            </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="proc-item" style="--i:3">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">Development &amp; Backend</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="proc-points-04" aria-label="Show all details for Development and Backend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="proc-points-04">
+              <ul class="proc-points">
+              <li>Frontend development</li>
+              <li>Desktop, tablet and mobile</li>
+              <li>Backend functionality</li>
+              <li>Forms and interactive features</li>
+              <li>Integrations</li>
+              <li>Performance, testing and fixes</li>
+            </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="proc-item" style="--i:4">
+          <div class="proc-body">
+            <div class="proc-head">
+              <div class="proc-heading">
+                <h3 class="proc-title">Launch &amp; Handover</h3>
+              </div>
+              <button class="proc-toggle" type="button" aria-expanded="false" aria-controls="proc-points-05" aria-label="Show all details for Launch and Handover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+            </div>
+            <div class="proc-points-wrap" id="proc-points-05">
+              <ul class="proc-points">
+              <li>Final testing</li>
+              <li>Domain and hosting setup</li>
+              <li>Deployment</li>
+              <li>Checks across all devices</li>
+              <li>Guidance for managing the site</li>
+              <li>Support during launch</li>
+            </ul>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+
+      <div class="process-photo reveal">
+        <picture><source srcset="Photos/phone-launched-640w.webp 640w, Photos/phone-launched-1024w.webp 1024w, Photos/phone-launched.webp 1584w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1584" height="672" src="Photos/phone-launched.jpg" alt="A finished website live on a phone resting on a desk" loading="lazy"></picture>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq section" id="faq">
+      <div class="section-head reveal">
+        <h2>Good questions,<br>honest answers</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item"><summary><span class="faq-q">How long does a website take?</span><span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-body"><p>Most projects launch within 2–4 weeks. Larger builds with custom functionality typically take 6–8 weeks. You'll get a clear timeline before we start.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">What does a website cost?</span><span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-body"><p>Our packages start at €500. The right price depends on scope, so we always start with a free consultation and a fixed quote.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Do I need to provide content and images?</span><span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-body"><p>No. We can write your copy, source premium imagery and structure your content for conversions. If you have material, great — we'll refine it together.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Will my website work on phones?</span><span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-body"><p>Absolutely — most of your visitors are on mobile, so every site we build is designed mobile-first and tested on real devices before launch.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">What happens after launch?</span><span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-body"><p>Every project includes post-launch support. Beyond that, we offer care plans for updates, security, backups and continuous improvement.</p></div></details>
+        <details class="faq-item"><summary><span class="faq-q">Can you improve my existing website instead?</span><span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-body"><p>Yes. We'll audit your current site for free and recommend whether a redesign or a rebuild will deliver more value for your budget.
+</p></div></details>
+      </div>
+    </section>
+
+    <!-- ============ CTA PHOTO ============ -->
+    <div class="cta-photo reveal">
+      <picture><source srcset="Photos/guy-working-21-9-640w.webp 640w, Photos/guy-working-21-9-1024w.webp 1024w, Photos/guy-working-21-9.webp 1915w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 94vw, 1420px" type="image/webp"><img width="1915" height="821" src="Photos/guy working 21 9.png" alt="Developer working at a dual-monitor setup at night" loading="lazy"></picture>
+    </div>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta" id="cta">
+      <div class="final-beam" aria-hidden="true"></div>
+      <div class="final-inner reveal">
+        <svg class="final-logo" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+          <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <h2>Every great website<br>starts with hello.</h2>
+        <a href="mailto:info@forgecraftwebsites.com" class="pill-btn light lg">Start Your Project</a>
+        <p class="final-micro">* Free consultation · Fixed quote · No obligation</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <a class="brand footer-brand" href="#top" aria-label="Back to top">
+        <svg class="brand-mark" viewBox="0 0 60 34" fill="none" aria-hidden="true">
+          <path d="M18 4 L6 17 L18 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 4 L54 17 L42 30" stroke="#4FA8DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M34 2 L26 32" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span>forgecraft</span>
+      </a>
+      <p class="footer-tagline">An independent web design and development studio in Lengerich, Germany.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="contact.html">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#configurator">Configure</a>
+        <a href="ai.html">AI &amp; People</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/forgecraftlabs/" aria-label="Forgecraft on Instagram" rel="me noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.tiktok.com/@forgecraftlabs" aria-label="Forgecraft on TikTok" rel="me noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.25 12a4.4 4.4 0 1 0 4.4 4.4V3.2a5.5 5.5 0 0 0 5.5 5.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Forgecraft Studio. All rights reserved.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Privacy Policy</a>
+      </nav>
+      <p><a href="mailto:info@forgecraftwebsites.com">info@forgecraftwebsites.com</a></p>
+    </div>
+  </footer>
+
+  <!-- ============ LIVE SITE VIEWER (monitor) ============ -->
+  <div class="site-viewer" id="siteViewer" role="dialog" aria-modal="true"
+       aria-label="Live website previews" aria-hidden="true">
+    <div class="site-viewer-backdrop" data-close></div>
+    <button class="sv-close" id="siteViewerClose" aria-label="Close preview">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+
+    <button class="sv-nav prev" id="siteViewerPrev" aria-label="Previous project">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+    </button>
+    <button class="sv-nav next" id="siteViewerNext" aria-label="Next project">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+    </button>
+
+    <div class="sv-monitor">
+      <iframe class="sv-iframe" id="siteViewerFrame" title="Live website preview" loading="lazy"></iframe>
+    </div>
+
+    <div class="sv-caption" id="siteViewerCaption">
+      <span class="sv-caption-name" id="siteViewerName">Autohaus Pufahl</span>
+      <span class="sv-caption-kind" id="siteViewerKind">Car dealership · Lengerich</span>
+      <span class="sv-dots" id="siteViewerDots" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+  /* 3D timeline draw */
+  (function() {
+    var scene = document.querySelector('.tl-scene');
+    if (!scene) return;
+    var linePath = scene.querySelector('.tl-line-path');
+    var glowPath = scene.querySelector('.tl-glow-path');
+    if (linePath) {
+      var len = linePath.getTotalLength ? linePath.getTotalLength() : 1200;
+      [linePath, glowPath].forEach(function(el) {
+        if (el) { el.style.strokeDasharray = len; el.style.strokeDashoffset = len; }
+      });
+    }
+    var obs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) { scene.classList.add('drawn'); obs.disconnect(); }
+    }, { threshold: 0.15 });
+    obs.observe(scene);
+  }());
+  /* timeline glow follow */
+  (function() {
+    var scene = document.querySelector('.tl-scene');
+    if (!scene) return;
+    var glow = document.createElement('div');
+    glow.className = 'tl-cursor-glow';
+    document.body.appendChild(glow);
+    scene.addEventListener('mousemove', function(e) {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+      glow.style.opacity = '1';
+    });
+    scene.addEventListener('mouseleave', function() {
+      glow.style.opacity = '0';
+    });
+  }());
+  /* timeline card expand */
+  (function() {
+    document.querySelectorAll('.tl-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        var isOpen = card.classList.contains('open');
+        document.querySelectorAll('.tl-card.open').forEach(function(c) {
+          c.classList.remove('open');
+          var btn = c.querySelector('.tl-toggle');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          card.classList.add('open');
+          var btn = card.querySelector('.tl-toggle');
+          if (btn) btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }());
+  /* price calculator */
+  (function () {
+    var BASE = 500, PER_PAGE = 80;
+    var slider = document.getElementById("calcSlider");
+    var pageNum = document.getElementById("calcPageNum");
+    var priceEl = document.getElementById("calcPrice");
+    if (!slider || !priceEl) return;
+
+    function fill() {
+      var min = +slider.min || 1, max = +slider.max || 20, val = +slider.value || 1;
+      var pct = ((val - min) / (max - min) * 100).toFixed(1);
+      slider.style.background = "linear-gradient(to right,#fff " + pct + "%,rgba(255,255,255,0.18) " + pct + "%)";
+    }
+
+    function update() {
+      var pages = +slider.value;
+      var total = BASE + (pages - 1) * PER_PAGE;
+      document.querySelectorAll(".calc-addon.selected").forEach(function (a) {
+        total += +a.dataset.price || 0;
+      });
+      priceEl.textContent = "from €" + total.toLocaleString("en-US");
+      priceEl.classList.remove("pulse"); void priceEl.offsetWidth; priceEl.classList.add("pulse");
+    }
+
+    slider.addEventListener("input", function () {
+      if (pageNum) pageNum.textContent = slider.value;
+      fill(); update();
+    });
+
+    document.querySelectorAll(".calc-addon").forEach(function (addon) {
+      var btn = addon.querySelector(".calc-toggle-btn");
+      addon.addEventListener("click", function () {
+        var sel = addon.classList.toggle("selected");
+        if (btn) {
+          btn.textContent = sel ? "—" : "+";
+          btn.setAttribute("aria-pressed", sel ? "true" : "false");
+        }
+        update();
+      });
+    });
+
+    fill(); update();
+  }());
+  </script>
+</body>
+</html>

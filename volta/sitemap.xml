@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://volta.example/about.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/cart.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/checkout.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/contact.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/faq.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/index.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/privacy.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/product.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/search.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/shipping-returns.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/shop.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/terms.html</loc><changefreq>weekly</changefreq></url>
+  <url><loc>https://volta.example/wishlist.html</loc><changefreq>weekly</changefreq></url>
+</urlset>

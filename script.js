@@ -381,7 +381,9 @@
 
       var hRect = hero.getBoundingClientRect();
       var heroH = hero.clientHeight;
-      var vGap = Math.max(14, heroH * 0.025);
+      // the dock casts a 14px-offset, 40px-blur shadow, so its visual
+      // footprint reaches well past its box - clear that too
+      var vGap = Math.max(26, heroH * 0.035);
 
       // clear the floating dock, which overlays the top of the hero
       var dock = document.querySelector(".dock");

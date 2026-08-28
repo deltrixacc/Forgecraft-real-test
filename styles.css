@@ -350,7 +350,9 @@ body.loaded .hero-cards { transition-delay: 0.62s; }
      (fitHeroTitle) sets top and font-size from the measured band; these
      are the no-JS fallbacks. transform is cleared so `top` is the real
      top edge - with translateY(-50%) the first line fell off the hero. */
-  .hero-title { top: 8%; left: 5%; transform: none; max-width: 90%; }
+  /* 6rem clears the dock (1rem offset + ~3.4rem tall) and its shadow.
+     A percentage does not: 8% of a 733px hero is 58px, i.e. behind it. */
+  .hero-title { top: 6rem; left: 6%; transform: none; max-width: 88%; }
   .hero-left { top: 30%; left: 5%; bottom: auto; max-width: calc(560px * var(--hs)); }
   .hero-cards { display: none; }
 }

@@ -218,29 +218,12 @@ main { position: relative; z-index: 1; }
   }
 }
 @media (max-aspect-ratio: 11 / 10) {        /* portrait / phone */
-  /* Show the whole 21:9 scene as a band rather than swapping to a portrait
-     crop, then stack the headline underneath it in normal flow. The section
-     is no longer aspect-locked, so .hero-photo becomes the image box and
-     everything positioned against it (the monitor hotspot) measures that. */
-  .hero {
-    aspect-ratio: auto;
-    height: auto;
-    overflow: visible;
-    padding-top: 5.2rem;              /* clear the floating dock */
-    padding-bottom: clamp(1.5rem, 4vh, 2.5rem);
-  }
+  .hero { aspect-ratio: 853 / 1518; }
   .hero-photo {
-    position: relative;
-    inset: auto;
-    aspect-ratio: 3828 / 1644;        /* the ultrawide plate, uncropped */
-    background-image: url("Photos/hero-showcase.png");
-    background-image: image-set(url("Photos/hero-showcase.webp") type("image/webp"),
-                                url("Photos/hero-showcase.png") type("image/png"));
-    background-position: center;
+    background-image: url("Photos/hero-showcase-portrait.png");
+    background-image: image-set(url("Photos/hero-showcase-portrait.webp") type("image/webp"),
+                                url("Photos/hero-showcase-portrait.png") type("image/png"));
   }
-  /* these decorate the full-bleed desktop hero and have nothing to sit on now */
-  .hero-beam, .hero-particles { display: none; }
-
 }
 
 .hero-particles {
@@ -1354,26 +1337,4 @@ picture { display: contents; }
   font-size: clamp(0.95rem, 1.1vw, 1.05rem);
   line-height: 1.7;
   text-wrap: pretty;
-}
-
-/* ============================================================
-   PORTRAIT HERO — title below the image
-   Must live after .hero-stage / .hero-title are declared above, or the
-   base `position: absolute` wins on source order and the headline lands
-   back on top of the monitor.
-   ============================================================ */
-@media (max-aspect-ratio: 11 / 10) {
-  .hero-stage { position: static; }
-  .hero-title {
-    position: static;
-    transform: none;
-    max-width: none;
-    margin: clamp(1.3rem, 4vh, 2rem) 0 0;
-    padding: 0 clamp(1.2rem, 5.5vw, 2rem);
-    text-align: center;
-    font-size: clamp(1.9rem, 8.5vw, 3.2rem);
-    line-height: 1.06;
-    filter: none;
-  }
-  .hero-title .ht-line { display: block; }
 }

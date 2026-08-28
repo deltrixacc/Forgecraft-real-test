@@ -314,10 +314,8 @@
   var LAYOUTS = [
     { mq: window.matchMedia("(min-aspect-ratio: 2 / 1)"),  // ultrawide
       w: 3828, h: 1644, posY: 0.65, quad: [[1864,363],[3257,281],[3257,1179],[1864,1147]] },
-    { mq: window.matchMedia("(max-aspect-ratio: 11 / 10)"), // portrait / phone
-      // shows the full 21:9 scene uncropped as a band, so it shares the
-      // ultrawide image and its monitor quad
-      w: 3828, h: 1644, quad: [[1864,363],[3257,281],[3257,1179],[1864,1147]] },
+    { mq: window.matchMedia("(max-aspect-ratio: 11 / 10)"), // portrait / phone (image is 2x = 1706x3036)
+      w: 1706, h: 3036, quad: [[532,1334],[1602,1302],[1592,1994],[516,1958]] },
     { mq: null,                                             // default: 16:9 desktop (image is 2x = 3344x1882)
       w: 3344, h: 1882, quad: [[1510,448],[2858,378],[2858,1250],[1508,1220]] }
   ];
@@ -370,14 +368,47 @@
     // top of the monitor. Fit it to that band rather than trusting a fixed
     // percentage - a fixed top clipped the first line off the hero on every
     // phone size, and a tall band would otherwise let the type reach the screen.
+    // Portrait: the title sits in the wall band between the nav dock and the
+    // top of the monitor. Fit it to that band rather than trusting a fixed
+    // percentage - a fixed top clipped the first line off the hero on every
+    // phone size, and a tall band would otherwise let the type reach the screen.
     if (portraitMQ.matches) {
-      // Portrait stacks the title below the 21:9 image band, in normal flow,
-      // so there is nothing to fit around and no monitor to avoid. Clear any
-      // inline values left over from a landscape render and let CSS own it.
       heroTitle.style.removeProperty("left");
-      heroTitle.style.removeProperty("top");
       heroTitle.style.removeProperty("max-width");
       heroTitle.style.removeProperty("font-size");
+      heroTitle.style.removeProperty("top");
+      if (screenTop == null) return;
+
+      var hRect = hero.getBoundingClientRect();
+      var heroH = hero.clientHeight;
+      var vGap = Math.max(14, heroH * 0.025);
+
+      // clear the floating dock, which overlays the top of the hero
+      var dock = document.querySelector(".dock");
+      var dockBottom = 0;
+      if (dock) {
+        var dRect = dock.getBoundingClientRect();
+        if (dRect.height) dockBottom = dRect.bottom - hRect.top;
+      }
+
+      var bandTop = Math.max(dockBottom + vGap, heroH * 0.05);
+      var bandBottom = screenTop - vGap;
+      var band = bandBottom - bandTop;
+      if (band <= 0) return;
+
+      heroTitle.style.top = bandTop.toFixed(1) + "px";
+
+      // shrink until the block fits the band; two passes settle the reflow
+      var baseFs = parseFloat(getComputedStyle(heroTitle).fontSize) || 16;
+      for (var pass = 0; pass < 2; pass++) {
+        var natural = heroTitle.offsetHeight;
+        if (natural <= band) break;
+        var next = Math.max(18, parseFloat(getComputedStyle(heroTitle).fontSize) * (band / natural));
+        heroTitle.style.fontSize = next.toFixed(2) + "px";
+      }
+      if (parseFloat(getComputedStyle(heroTitle).fontSize) > baseFs) {
+        heroTitle.style.removeProperty("font-size");
+      }
       return;
     }
 
@@ -428,7 +459,24 @@
     }
     var half = tH / 2;                       // transform is translateY(-50%)
     var centre = heroTitle.offsetTop;
-    var minC = half + hH * 0.02;
+
+    // The dock floats over the top of the hero. Only give it clearance when the
+    // headline actually runs under it horizontally - on a wide screen the title
+    // sits well left of the dock and should not be pushed down for nothing.
+    var topGuard = hH * 0.02;
+    var dockEl = document.querySelector(".dock");
+    if (dockEl) {
+      var dRect = dockEl.getBoundingClientRect();
+      var hRect = hero.getBoundingClientRect();
+      var tLeft = left, tRight = left + Math.min(widest, avail);
+      var dLeft = dRect.left - hRect.left, dRight = dRect.right - hRect.left;
+      var sharesColumn = tRight > dLeft && tLeft < dRight;
+      if (dRect.height && sharesColumn) {
+        topGuard = Math.max(topGuard, (dRect.bottom - hRect.top) + 14);
+      }
+    }
+
+    var minC = half + topGuard;
     var maxC = hH - half - hH * 0.02;
     if (maxC > minC) {
       var clamped = Math.min(Math.max(centre, minC), maxC);

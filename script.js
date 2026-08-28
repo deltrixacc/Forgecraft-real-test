@@ -314,8 +314,10 @@
   var LAYOUTS = [
     { mq: window.matchMedia("(min-aspect-ratio: 2 / 1)"),  // ultrawide
       w: 3828, h: 1644, posY: 0.65, quad: [[1864,363],[3257,281],[3257,1179],[1864,1147]] },
-    { mq: window.matchMedia("(max-aspect-ratio: 11 / 10)"), // portrait / phone (image is 2x = 1706x3036)
-      w: 1706, h: 3036, quad: [[532,1334],[1602,1302],[1592,1994],[516,1958]] },
+    { mq: window.matchMedia("(max-aspect-ratio: 11 / 10)"), // portrait / phone
+      // shows the full 21:9 scene uncropped as a band, so it shares the
+      // ultrawide image and its monitor quad
+      w: 3828, h: 1644, quad: [[1864,363],[3257,281],[3257,1179],[1864,1147]] },
     { mq: null,                                             // default: 16:9 desktop (image is 2x = 3344x1882)
       w: 3344, h: 1882, quad: [[1510,448],[2858,378],[2858,1250],[1508,1220]] }
   ];
@@ -369,43 +371,13 @@
     // percentage - a fixed top clipped the first line off the hero on every
     // phone size, and a tall band would otherwise let the type reach the screen.
     if (portraitMQ.matches) {
+      // Portrait stacks the title below the 21:9 image band, in normal flow,
+      // so there is nothing to fit around and no monitor to avoid. Clear any
+      // inline values left over from a landscape render and let CSS own it.
       heroTitle.style.removeProperty("left");
+      heroTitle.style.removeProperty("top");
       heroTitle.style.removeProperty("max-width");
       heroTitle.style.removeProperty("font-size");
-      heroTitle.style.removeProperty("top");
-      if (screenTop == null) return;
-
-      var hRect = hero.getBoundingClientRect();
-      var heroH = hero.clientHeight;
-      var vGap = Math.max(14, heroH * 0.025);
-
-      // clear the floating dock, which overlays the top of the hero
-      var dock = document.querySelector(".dock");
-      var dockBottom = 0;
-      if (dock) {
-        var dRect = dock.getBoundingClientRect();
-        if (dRect.height) dockBottom = dRect.bottom - hRect.top;
-      }
-
-      var bandTop = Math.max(dockBottom + vGap, heroH * 0.05);
-      var bandBottom = screenTop - vGap;
-      var band = bandBottom - bandTop;
-      if (band <= 0) return;
-
-      heroTitle.style.top = bandTop.toFixed(1) + "px";
-
-      // shrink until the block fits the band; two passes settle the reflow
-      var baseFs = parseFloat(getComputedStyle(heroTitle).fontSize) || 16;
-      for (var pass = 0; pass < 2; pass++) {
-        var natural = heroTitle.offsetHeight;
-        if (natural <= band) break;
-        var next = Math.max(18, parseFloat(getComputedStyle(heroTitle).fontSize) * (band / natural));
-        heroTitle.style.fontSize = next.toFixed(2) + "px";
-      }
-      // never let it grow past the CSS size
-      if (parseFloat(getComputedStyle(heroTitle).fontSize) > baseFs) {
-        heroTitle.style.removeProperty("font-size");
-      }
       return;
     }
 
@@ -469,7 +441,9 @@
     if (!hotspot) return;
     var L = activeLayout();
     var hero = document.getElementById("hero");
-    var w = hero.clientWidth, h = hero.clientHeight;
+    var photo = hero.querySelector(".hero-photo");
+    var w = photo.offsetWidth, h = photo.offsetHeight;
+    var offX = photo.offsetLeft, offY = photo.offsetTop;
     // background-size: cover. The vertical anchor must match .hero-photo's
     // background-position in styles.css: the ultrawide image is anchored at
     // `center 65%`, every other breakpoint at `center`. Using 50% here shifted
@@ -477,7 +451,7 @@
     var scale = Math.max(w / L.w, h / L.h);
     var dw = L.w * scale, dh = L.h * scale;
     var posY = (L.posY == null) ? 0.5 : L.posY;
-    var ox = (w - dw) * 0.5, oy = (h - dh) * posY;
+    var ox = offX + (w - dw) * 0.5, oy = offY + (h - dh) * posY;
     var pts = L.quad.map(function (p) { return [ox + p[0] * scale, oy + p[1] * scale]; });
     var xs = pts.map(function (p) { return p[0]; });
     var ys = pts.map(function (p) { return p[1]; });

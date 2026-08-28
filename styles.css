@@ -218,12 +218,29 @@ main { position: relative; z-index: 1; }
   }
 }
 @media (max-aspect-ratio: 11 / 10) {        /* portrait / phone */
-  .hero { aspect-ratio: 853 / 1518; }
-  .hero-photo {
-    background-image: url("Photos/hero-showcase-portrait.png");
-    background-image: image-set(url("Photos/hero-showcase-portrait.webp") type("image/webp"),
-                                url("Photos/hero-showcase-portrait.png") type("image/png"));
+  /* Show the whole 21:9 scene as a band rather than swapping to a portrait
+     crop, then stack the headline underneath it in normal flow. The section
+     is no longer aspect-locked, so .hero-photo becomes the image box and
+     everything positioned against it (the monitor hotspot) measures that. */
+  .hero {
+    aspect-ratio: auto;
+    height: auto;
+    overflow: visible;
+    padding-top: 5.2rem;              /* clear the floating dock */
+    padding-bottom: clamp(1.5rem, 4vh, 2.5rem);
   }
+  .hero-photo {
+    position: relative;
+    inset: auto;
+    aspect-ratio: 3828 / 1644;        /* the ultrawide plate, uncropped */
+    background-image: url("Photos/hero-showcase.png");
+    background-image: image-set(url("Photos/hero-showcase.webp") type("image/webp"),
+                                url("Photos/hero-showcase.png") type("image/png"));
+    background-position: center;
+  }
+  /* these decorate the full-bleed desktop hero and have nothing to sit on now */
+  .hero-beam, .hero-particles { display: none; }
+
 }
 
 .hero-particles {
@@ -969,6 +986,11 @@ input.calc-slider::-moz-range-thumb {
 }
 
 @media (max-width: 640px) {
+  /* The top-right wordmark and the centred dock collide on a narrow screen -
+     measured 67x32px of overlap at 390px, which is why "forgecraft" appeared
+     cut off. The dock already carries the logo mark and the menu already has
+     a Home link, so the duplicate is what goes. The footer brand is untouched. */
+  .brand:not(.footer-brand) { display: none; }
   .brand span { font-size: 1.2rem; }
   .brand-mark { width: 24px; }
   .dock { top: 1rem; padding-left: 0.8rem; }
@@ -1212,7 +1234,27 @@ input.calc-slider::-moz-range-thumb {
 .page-hero-media.focus-right img { object-position: 62% 50%; }
 
 @media (max-width: 700px) {
-  .statement.page-hero { min-height: clamp(26rem, 74vh, 40rem); }
+  /* Same treatment as the home hero: show the whole 21:9 plate rather than
+     cropping it to fill a tall box, and stack the heading underneath. With the
+     text off the image the scrim and shadows are no longer needed. */
+  .statement.page-hero {
+    display: block;
+    min-height: 0;
+    padding: 5.2rem 0 clamp(2rem, 5vh, 3rem);
+  }
+  .page-hero-media { position: relative; inset: auto; }
+  .page-hero-media img,
+  .page-hero-media.focus-right img {
+    aspect-ratio: 21 / 9;
+    height: auto;
+    object-position: center;
+  }
+  .page-hero-media::after { display: none; }
+  .statement.page-hero .statement-inner {
+    padding: clamp(1.3rem, 4vh, 2rem) clamp(1.2rem, 5.5vw, 2rem) 0;
+  }
+  .statement.page-hero h1 { filter: none; }
+  .statement.page-hero .statement-sub { text-shadow: none; }
   /* a narrow crop centred on the monitor puts white type on a white panel —
      swing across to the darker side of the room instead */
   .page-hero-media.focus-right img { object-position: 33% 50%; }
@@ -1312,4 +1354,26 @@ picture { display: contents; }
   font-size: clamp(0.95rem, 1.1vw, 1.05rem);
   line-height: 1.7;
   text-wrap: pretty;
+}
+
+/* ============================================================
+   PORTRAIT HERO — title below the image
+   Must live after .hero-stage / .hero-title are declared above, or the
+   base `position: absolute` wins on source order and the headline lands
+   back on top of the monitor.
+   ============================================================ */
+@media (max-aspect-ratio: 11 / 10) {
+  .hero-stage { position: static; }
+  .hero-title {
+    position: static;
+    transform: none;
+    max-width: none;
+    margin: clamp(1.3rem, 4vh, 2rem) 0 0;
+    padding: 0 clamp(1.2rem, 5.5vw, 2rem);
+    text-align: center;
+    font-size: clamp(1.9rem, 8.5vw, 3.2rem);
+    line-height: 1.06;
+    filter: none;
+  }
+  .hero-title .ht-line { display: block; }
 }

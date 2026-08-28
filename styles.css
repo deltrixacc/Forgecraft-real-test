@@ -398,6 +398,7 @@ body.loaded .hero-cards { transition-delay: 0.62s; }
 }
 .cfg-photo {
   width: 100%;
+  height: auto;
   aspect-ratio: 21 / 9;
   object-fit: cover;
   object-position: center 50%;
@@ -835,7 +836,7 @@ input.calc-slider::-moz-range-thumb {
 
 .process-photo.top { margin-top: 0; margin-bottom: clamp(3.5rem, 7vh, 5rem); }
 .process-photo { margin-top: clamp(5.5rem, 11vh, 9rem); margin-bottom: calc(-1 * clamp(1.5rem, 3vh, 3rem)); border-radius: var(--radius); overflow: hidden; }
-.process-photo img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: center 50%; display: block; }
+.process-photo img { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; object-position: center 50%; display: block; }
 
 /* ============================================================
    CTA PHOTO
@@ -846,7 +847,7 @@ input.calc-slider::-moz-range-thumb {
   padding: 0 clamp(1.2rem, 5.5vw, 5.5rem);
 }
 .cta-photo img {
-  width: 100%; aspect-ratio: 21 / 9; display: block;
+  width: 100%; height: auto; aspect-ratio: 21 / 9; display: block;
   object-fit: cover; object-position: center 50%;
   border-radius: var(--radius);
 }
